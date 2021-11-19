@@ -74,8 +74,7 @@ function addVideoStream(video, stream){
       document.getElementsByTagName("video")[index].style.width =
         100 / totalUsers + "%";
       
-        document.getElementsByTagName("video")[index].style.height =
-        100 / totalUsers + "%";
+        document.getElementsByTagName("video")[index].style.height = 'auto';
     }
   }
 }
