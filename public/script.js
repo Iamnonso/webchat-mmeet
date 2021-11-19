@@ -1,9 +1,9 @@
 const socket = io('/');
 const videoGrid = document.getElementById('video-grid');
 const myPeer = new Peer(undefined, {
-    host:'webchatnonso.herokuapp.com',
-    secure:true,
-    port:443
+    path: "/peerjs",
+    host: "/",
+    port: "3030",
     })
 
 const myVideo = document.createElement('video');
@@ -19,12 +19,16 @@ if(navigator.mediaDevices.getUserMedia){
         addVideoStream(myVideo, stream)
 
         myPeer.on('call', call => {
-            call.answer(stream)
+            call.answer(stream);
             const video = document.createElement('video')
             call.on('stream', userVideoStream => {
               addVideoStream(video, userVideoStream)
             })
-          })
+          },
+          function(err){
+            console.log("Failed to get local stream", err);
+          }
+          );
         
           socket.on('user-connected', userId => {
             connectToNewUser(userId, stream)
@@ -39,14 +43,17 @@ if(navigator.mediaDevices.getUserMedia){
 myPeer.on('open', id=>{
 
     socket.emit('join-room', ROOM_ID, id)
+    console.log('emitting event here...');
 
 })
 
 
 function connectToNewUser(userId, stream) {
     const call = myPeer.call(userId, stream)
+    console.log('New user call ', + call);
     const video = document.createElement('video')
     call.on('stream', userVideoStream => {
+      console.log('UserVideoStream ', + userVideoStream);
       addVideoStream(video, userVideoStream)
     })
     call.on('close', () => {
