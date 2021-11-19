@@ -1,8 +1,9 @@
 const socket = io('/');
 const videoGrid = document.getElementById('video-grid');
 const myPeer = new Peer(undefined, {
-    path:'/',
-    port: '3000'
+    host: 'https://webchatnonso.herokuapp.com/',
+    port: 9000,
+    path: '/myapp'
 })
 
 const myVideo = document.createElement('video');
