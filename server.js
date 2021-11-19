@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const { Socket } = require('socket.io');
 const app = express();
 const server = require('http').Server(app);
 

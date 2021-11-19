@@ -1,16 +1,16 @@
 {
   "name": "videochat",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web video chat platform",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "server.js",
-    "DevStart": "nodemon server.js"
+    "DevStart": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Nonso",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "ejs": "^3.1.6",
@@ -20,5 +20,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iamnonso/webchat-mmeet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Iamnonso/webchat-mmeet/issues"
+  },
+  "homepage": "https://github.com/Iamnonso/webchat-mmeet#readme"
 }
