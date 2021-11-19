@@ -66,5 +66,13 @@ function addVideoStream(video, stream){
         video.play()
     });
     
-    videoGrid.append(video)
+    videoGrid.append(video);
+
+    let totalUsers = document.getElementsByTagName("video").length;
+  if (totalUsers > 1) {
+    for (let index = 0; index < totalUsers; index++) {
+      document.getElementsByTagName("video")[index].style.width =
+        100 / totalUsers + "%";
+    }
+  }
 }
