@@ -1,7 +1,8 @@
 const socket = io('/');
 const videoGrid = document.getElementById('video-grid');
-var PeerServer = require('peer').PeerServer;
-const myPeer = PeerServer({port: 443, path: '/peerjs'});
+const myPeer = new Peer({port: 443, path: '/peerjs'});
+
+console.log(myPeer);
 
 const myVideo = document.createElement('video');
 myVideo.muted = true;
