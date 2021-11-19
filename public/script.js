@@ -73,6 +73,9 @@ function addVideoStream(video, stream){
     for (let index = 0; index < totalUsers; index++) {
       document.getElementsByTagName("video")[index].style.width =
         100 / totalUsers + "%";
+      
+        document.getElementsByTagName("video")[index].style.height =
+        100 / totalUsers + "%";
     }
   }
 }
