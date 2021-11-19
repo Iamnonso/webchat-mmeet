@@ -3,7 +3,7 @@ const videoGrid = document.getElementById('video-grid');
 const myPeer = new Peer(undefined, {
     host: 'https://webchatnonso.herokuapp.com/',
     port: 9000,
-    path: '/myapp'
+    path: '/'
 })
 
 const myVideo = document.createElement('video');
