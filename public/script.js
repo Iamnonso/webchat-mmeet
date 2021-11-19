@@ -1,11 +1,13 @@
 const socket = io('/');
 const videoGrid = document.getElementById('video-grid');
 const myPeer = new Peer(undefined, {
-    host:'/'
+    path:'/',
+    port: '3000'
 })
 
 const myVideo = document.createElement('video');
 myVideo.muted = true;
+const peers = {}
 
 if(navigator.mediaDevices.getUserMedia){
 
