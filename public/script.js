@@ -70,6 +70,6 @@ function addVideoStream(video, stream) {
 
     let totalUsers = document.getElementsByTagName("video").length;
     const NumberOfUser = document.getElementById("users");
-    NumberOfUser.textContent = `Total user: ${NumberOfUser}`;
+    NumberOfUser.textContent = `Total user: ${totalUsers}`;
 
 }
